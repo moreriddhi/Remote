@@ -18,7 +18,10 @@ The embedded part is laid down on a Raspberry Pi.
 ---
 
 **Android**
+
+
 The android app will be used in registering the users and linking these members to a database.
 This database will contain the information about the registered users and the household that they are linked to .(using a unique id for each household).Also there will be a plan view of the house that can be used to control variuos devices that are connected to the database.
+
 ---
 

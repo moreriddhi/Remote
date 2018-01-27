@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Remote</string>
+    <string name="txt_signup">Signup</string>
+    <string name="etxt_hint_email">Enter your email address</string>
+    <string name="etxt_hint_password">Enter a password</string>
+</resources>

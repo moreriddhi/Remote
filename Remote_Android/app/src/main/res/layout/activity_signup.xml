@@ -38,4 +38,24 @@
         android:hint="@string/etxt_hint_password"
         android:id="@+id/etxtPassword"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:id="@+id/btnSignup"
+        android:layout_margin="20dp"
+        android:padding="3dp"
+        android:text="@string/btn_signup"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSignuptoLogin"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:padding="3dp"
+        android:text="@string/txt_signup_to_login"/>
+
 </LinearLayout>

@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
+        android:inputType="textPassword"
         android:padding="3dp"
         android:hint="@string/etxt_hint_password"
         android:id="@+id/etxtPassword"/>

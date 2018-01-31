@@ -384,7 +384,9 @@
   "css": [
     "print.less",
     "type.less",
+    "code.less",
     "grid.less",
+    "tables.less",
     "forms.less",
     "buttons.less",
     "responsive-utilities.less",
@@ -410,6 +412,7 @@
     "close.less",
     "component-animations.less",
     "dropdowns.less",
+    "tooltip.less",
     "popovers.less",
     "modals.less",
     "carousel.less"
@@ -428,5 +431,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=8f70153c0fac7d1e3f77db13dfbd6237"
+  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=d6c14c6b2a319f422633e23977b0eace"
 }

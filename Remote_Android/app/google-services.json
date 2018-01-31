@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "713755722687",
+    "firebase_url": "https://remote-36e95.firebaseio.com",
+    "project_id": "remote-36e95",
+    "storage_bucket": "remote-36e95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713755722687:android:bc9e7c8308f03b1f",
+        "android_client_info": {
+          "package_name": "com.example.atharva.remote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713755722687-p255ar9ep4k2en7jqt8o6mmrbcm1dkl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxIVT8upIqmSaBxsFptjbF40P_NYpL-0U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

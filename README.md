@@ -11,6 +11,9 @@ This project includes the following -
 
 The embedded part is laid down on a Raspberry Pi.
 
+Requirements:
+requests
+
 ---
 
 **Web**

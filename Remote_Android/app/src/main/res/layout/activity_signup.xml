@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignupActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:id="@+id/txtSignup"
+        android:text="@string/txt_signup"
+        android:textSize="30dp"
+        android:layout_margin="20dp"
+        android:padding="3dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="3dp"
+        android:hint="@string/etxt_hint_email"
+        android:inputType="textEmailAddress"
+        android:id="@+id/etxtEmail"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:inputType="textPassword"
+        android:padding="3dp"
+        android:hint="@string/etxt_hint_password"
+        android:id="@+id/etxtPassword"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:id="@+id/btnSignup"
+        android:layout_margin="20dp"
+        android:padding="3dp"
+        android:text="@string/btn_signup"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSignuptoLogin"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:padding="3dp"
+        android:text="@string/txt_signup_to_login"/>
+
+</LinearLayout>

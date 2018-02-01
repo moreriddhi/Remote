@@ -5,38 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignupActivity">
+    tools:context=".LoginActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:id="@+id/txtSignup"
-        android:text="@string/txt_signup"
+        android:id="@+id/txtLogin"
+        android:text="@string/txt_login"
         android:textSize="30dp"
         android:layout_margin="20dp"
-        android:padding="3dp"
-        />
+        android:padding="3dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
-        android:padding="3dp"
         android:hint="@string/etxt_hint_email"
+        android:layout_margin="20dp"
+        android:padding="3dp"
         android:inputType="textEmailAddress"
         android:id="@+id/etxtEmail"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
-        android:inputType="textPassword"
-        android:padding="3dp"
         android:hint="@string/etxt_hint_password"
+        android:layout_margin="20dp"
+        android:padding="3dp"
+        android:inputType="textPassword"
         android:id="@+id/etxtPassword"/>
 
     <Button
@@ -44,19 +43,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:id="@+id/btnSignup"
+        android:id="@+id/btnLogin"
         android:layout_margin="20dp"
         android:padding="3dp"
-        android:text="@string/btn_signup"/>
+        android:text="@string/btn_login"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtSignupToLogin"
+        android:id="@+id/txtLoginToSignup"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:layout_margin="20dp"
         android:padding="3dp"
-        android:text="@string/txt_signup_to_login"/>
-
+        android:text="@string/txt_login_to_signup"/>
 </LinearLayout>

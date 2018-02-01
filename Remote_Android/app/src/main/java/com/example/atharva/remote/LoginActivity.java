@@ -1,15 +1,14 @@
 package com.example.atharva.remote;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.app.ProgressDialog;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,48 +17,57 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener
-{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private Button buttonSignup;
-    private TextView textViewSignupToLogin;
+    private Button buttonLogin;
+    private TextView textViewLoginToSignup;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+//    private FirebaseUser firebaseUser;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_login);
         editTextEmail=(EditText)findViewById(R.id.etxtEmail);
         editTextPassword=(EditText)findViewById(R.id.etxtPassword);
-        buttonSignup=(Button)findViewById(R.id.btnSignup);
-        textViewSignupToLogin=(TextView)findViewById(R.id.txtSignupToLogin);
-        buttonSignup.setOnClickListener(this);
-        textViewSignupToLogin.setOnClickListener(this);
+        buttonLogin=(Button)findViewById(R.id.btnLogin);
+        textViewLoginToSignup=(TextView)findViewById(R.id.txtLoginToSignup);
+        buttonLogin.setOnClickListener(this);
+        textViewLoginToSignup.setOnClickListener(this);
         progressDialog=new ProgressDialog(this);
         firebaseAuth=FirebaseAuth.getInstance();
-    }
-
-    @Override
-    public void onClick(View view) {
-
-        if(view==buttonSignup)
-        {
-
-            registerUser();
-            //register
-        }
-        if(view==textViewSignupToLogin)
+  //      firebaseUser=firebaseAuth.getCurrentUser();
+        if(firebaseAuth.getCurrentUser()!=null)
         {
             finish();
-            Intent intent=new Intent(this, LoginActivity.class);
+            Intent intent=new Intent(this,ProfileActivity.class);
             startActivity(intent);
         }
     }
 
-    private  void registerUser()
+    @Override
+    public void onClick(View view) {
+        if(view==buttonLogin)
+        {
+            userLogin();
+        }
+        if(view == textViewLoginToSignup)
+        {
+            finish();
+            Intent intent = new Intent(this,SignupActivity.class);
+//            intent.putExtra("UUID",firebaseUser.getUid());
+            startActivity(intent);
+        }
+    }
+
+    private void userLogin()
     {
         String email=editTextEmail.getText().toString().trim();
         String password=editTextPassword.getText().toString().trim();
@@ -75,17 +83,21 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        progressDialog.setMessage("Registering User ...");
+        progressDialog.setMessage("Logging in ...");
         progressDialog.show();
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task)
-            {
+            public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
                     progressDialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Registration Successful",Toast.LENGTH_SHORT).show();
+                    finish();
+                    Toast.makeText(getApplicationContext(),"Successfully Loged in",Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(getApplicationContext(),ProfileActivity.class);
+               //     intent.putExtra("Username",firebaseAuth.getCurrentUser().getEmail());
+  //                  intent.putExtra("UUID",firebaseUser.getUid());
+                    startActivity(intent);
                 }
             }
         }).addOnFailureListener(this, new OnFailureListener() {

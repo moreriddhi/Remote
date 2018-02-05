@@ -15,6 +15,37 @@
         android:layout_margin="20dp"
         android:padding="3dp"
         android:id="@+id/txtProfileUUID"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:padding="3dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="Select pi id :"/>
+        <Spinner
+            android:id="@+id/spinnerSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="20dp"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:padding="3dp"
+        android:layout_margin="20dp"
+        android:text="@string/btn_set_pi_id"
+        android:id="@+id/btnSetPiId"/>
 
     <Button
         android:layout_width="wrap_content"

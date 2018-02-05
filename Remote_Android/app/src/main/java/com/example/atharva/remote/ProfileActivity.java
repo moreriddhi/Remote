@@ -16,6 +16,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private TextView textViewUUID;
     private FirebaseAuth firebaseAuth;
     private Button buttonLogout;
+    private Button buttonRegisterPi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
         textViewUUID=(TextView)findViewById(R.id.txtProfileUUID);
         buttonLogout=(Button)findViewById(R.id.btnLogout);
+        buttonRegisterPi=(Button)findViewById(R.id.btnSetPiId);
         firebaseAuth=FirebaseAuth.getInstance();
         FirebaseUser user=firebaseAuth.getCurrentUser();
         if(user==null)
@@ -33,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
         textViewUUID.setText("User Email : " + user.getEmail().toString()+"\n"+"UUID : " + user.getUid().toString());
         buttonLogout.setOnClickListener(this);
+        buttonRegisterPi.setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +45,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             finish();
             firebaseAuth.signOut();
             Intent intent=new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+        if(view==buttonRegisterPi)
+        {
+            Intent intent=new Intent(this,RegisterPiActivity.class);
             startActivity(intent);
         }
     }

@@ -29,7 +29,7 @@ public class RegisterPiActivity extends AppCompatActivity implements View.OnClic
         editTextPiId=(EditText)findViewById(R.id.etxtPiId);
         buttonRegPiId=(Button)findViewById(R.id.btnRegisterPiId);
         firebaseAuth=FirebaseAuth.getInstance();
-        databaseReference= FirebaseDatabase.getInstance().getReference();
+        databaseReference= FirebaseDatabase.getInstance().getReference("Pi-IDs");
         buttonRegPiId.setOnClickListener(this);
     }
 
@@ -47,9 +47,10 @@ public class RegisterPiActivity extends AppCompatActivity implements View.OnClic
         String piId = editTextPiId.getText().toString().trim();
      //   Toast.makeText(this, piId, Toast.LENGTH_SHORT).show();
         if (!TextUtils.isEmpty(piId)) {
+            //String id=databaseReference.push().getKey();
             userInfo userInf = new userInfo(piId);
             FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-            databaseReference.child(user.getUid()).setValue(userInf);
+            databaseReference.child(piId).setValue(userInf);
             Toast.makeText(this, "Succesful", Toast.LENGTH_SHORT).show();
         }
         else

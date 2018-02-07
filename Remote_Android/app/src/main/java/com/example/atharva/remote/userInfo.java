@@ -14,4 +14,11 @@ public class userInfo {
         this.piId=piId;
     }
 
+    public String getPiId() {
+        return piId;
+    }
+
+    public void setPiId(String piId) {
+        this.piId = piId;
+    }
 }
